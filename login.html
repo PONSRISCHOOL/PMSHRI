@@ -1,211 +1,112 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login Form with Light Button</title>
-    <!-- important assets
-    linear-gradient(#141e30, #2a6c56)
-     box-shadow: 0 0 5px #03f484, 0 0 25px #03f484, 0 0 50px #03f484, 0 0 100px #03f484;
-    
-    -->
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>login</title>
 
-    <style>
-        html {
-            height: 100%;
-        }
-        
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: sans-serif;
-            background: linear-gradient(#141e30, #2a6c56);
-        }
-        
-        .login-box {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            width: 400px;
-            padding: 40px;
-            transform: translate(-50%, -50%);
-            background: rgba(0, 0, 0, 0.5);
-            box-sizing: border-box;
-            box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6);
-            border-radius: 10px;
-        }
-        
-        .login-box h2 {
-            margin: 0 0 30px;
-            padding: 0;
-            color: #fff;
-            text-align: center;
-        }
-        
-        .login-box .user-box {
-            position: relative;
-        }
-        
-        .login-box .user-box input {
-            width: 100%;
-            padding: 10px 0;
-            font-size: 16px;
-            color: #fff;
-            margin-bottom: 30px;
-            outline: none;
-            background: transparent;
-        }
-        
-        .login-box .user-box label {
-            position: absolute;
-            top: 0;
-            left: 0;
-            padding: 10px 0;
-            font-size: 16px;
-            color: #fff;
-            pointer-events: none;
-            transition: 0.5s;
-        }
-        
-        .login-box .user-box input:focus~label,
-        .login-box .user-box input:valid~label {
-            top: -20px;
-            left: 0;
-            color: #03f484;
-            font-size: 12px;
-        }
-        
-        .login-box form a {
-            position: relative;
-            display: inline-block;
-            padding: 10px 20px;
-            color: #03f484;
-            font-size: 16px;
-            text-decoration: none;
-            text-transform: uppercase;
-            overflow: hidden;
-            transition: 0.5s;
-            margin-top: 40px;
-            letter-spacing: 4px;
-        }
-        
-        .login-box a:hover {
-            background: #03f484;
-            color: #fff;
-            border-radius: 5px;
-            box-shadow: 0 0 5px #03f484, 0 0 25px #03f484, 0 0 50px #03f484, 0 0 100px #03f484;
-        }
-        
-        .login-box a span {
-            position: absolute;
-            display: block;
-        }
-        
-        .login-box a span:nth-child(1) {
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 2px;
-            background: linear-gradient(90deg, transparent, #03f484);
-            animation: btn-anim1 1s linear infinite;
-        }
-        
-        @keyframes btn-anim1 {
-            0% {
-                left: -100%;
-            }
-            50%,
-            100% {
-                left: 100%;
-            }
-        }
-        
-        .login-box a span:nth-child(2) {
-            top: -100%;
-            right: 0;
-            width: 2px;
-            height: 100%;
-            background: linear-gradient(180deg, transparent, #03f484);
-            animation: btn-anim2 1s linear infinite;
-            animation-delay: 0.25s;
-        }
-        
-        @keyframes btn-anim2 {
-            0% {
-                top: -100%;
-            }
-            50%,
-            100% {
-                top: 100%;
-            }
-        }
-        
-        .login-box a span:nth-child(3) {
-            bottom: 0;
-            right: 100%;
-            width: 100%;
-            height: 2px;
-            background: linear-gradient(270deg, transparent, #03f484);
-            animation: btn-anim3 1s linear infinite;
-            animation-delay: 0.5s;
-        }
-        
-        @keyframes btn-anim3 {
-            0% {
-                right: -100%;
-            }
-            50%,
-            100% {
-                right: 100%;
-            }
-        }
-        
-        .login-box a span:nth-child(4) {
-            bottom: -100%;
-            left: 0;
-            width: 2px;
-            height: 100%;
-            background: linear-gradient(360deg, transparent, #03f484);
-            animation: btn-anim4 1s linear infinite;
-            animation-delay: 0.75s;
-        }
-        
-        @keyframes btn-anim4 {
-            0% {
-                bottom: -100%;
-            }
-            50%,
-            100% {
-                bottom: 100%;
-            }
-        }
-    </style>
+   <!-- font awesome cdn link  -->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
+
+   <!-- custom css file link  -->
+   <link rel="stylesheet" href="css/style.css">
+
 </head>
-
 <body>
-    <div class="login-box">
-        <h2>Login Form</h2>
-        <form action="https://api.web3forms.com/submit" method="POST">
-            <div class="user-box">
-<input type="hidden" name="access_key" value="2233147a-3064-4046-b369-711700c07c0a">
-                <input type="text" name="email" required>
-                <label for="">Username</label>
-            </div>
-            <div class="user-box">
-                <input type="password" name="password" required>
-                <label for="">password</label>
-            </div>
-            <a href="">
-                <span></span>
-                <span></span>
-                <span></span>
-                <span></span>Submit
-            </a>
-        </form>
-    </div>
 
+<header class="header">
+   
+   <section class="flex">
+
+      <a href="home.html" class="logo">Educa.</a>
+
+      <form action="search.html" method="post" class="search-form">
+         <input type="text" name="search_box" required placeholder="search courses..." maxlength="100">
+         <button type="submit" class="fas fa-search"></button>
+      </form>
+
+      <div class="icons">
+         <div id="menu-btn" class="fas fa-bars"></div>
+         <div id="search-btn" class="fas fa-search"></div>
+         <div id="user-btn" class="fas fa-user"></div>
+         <div id="toggle-btn" class="fas fa-sun"></div>
+      </div>
+
+      <div class="profile">
+         <img src="images/pic-1.jpg" class="image" alt="">
+         <h3 class="name">shaikh anas</h3>
+         <p class="role">studen</p>
+         <a href="profile.html" class="btn">view profile</a>
+         <div class="flex-btn">
+            <a href="login.html" class="option-btn">login</a>
+            <a href="register.html" class="option-btn">register</a>
+         </div>
+      </div>
+
+   </section>
+
+</header>   
+
+<div class="side-bar">
+
+   <div id="close-btn">
+      <i class="fas fa-times"></i>
+   </div>
+
+   <div class="profile">
+      <img src="images/pic-1.jpg" class="image" alt="">
+      <h3 class="name">shaikh anas</h3>
+      <p class="role">studen</p>
+      <a href="profile.html" class="btn">view profile</a>
+   </div>
+
+   <nav class="navbar">
+      <a href="home.html"><i class="fas fa-home"></i><span>home</span></a>
+      <a href="about.html"><i class="fas fa-question"></i><span>about</span></a>
+      <a href="courses.html"><i class="fas fa-graduation-cap"></i><span>courses</span></a>
+      <a href="teachers.html"><i class="fas fa-chalkboard-user"></i><span>teachers</span></a>
+      <a href="contact.html"><i class="fas fa-headset"></i><span>contact us</span></a>
+   </nav>
+
+</div>
+
+<section class="form-container">
+
+   <form action="" method="post" enctype="multipart/form-data">
+      <h3>login now</h3>
+      <p>your email <span>*</span></p>
+      <input type="email" name="email" placeholder="enter your email" required maxlength="50" class="box">
+      <p>your password <span>*</span></p>
+      <input type="password" name="pass" placeholder="enter your password" required maxlength="20" class="box">
+      <input type="submit" value="login new" name="submit" class="btn">
+   </form>
+
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<footer class="footer">
+
+   &copy; copyright @ 2022 by <span>mr. web designer</span> | all rights reserved!
+
+</footer>
+
+<!-- custom js file link  -->
+<script src="js/script.js"></script>
+
+   
 </body>
-
 </html>
